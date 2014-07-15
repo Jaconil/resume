@@ -1,0 +1,133 @@
+@import "variables";
+@import "mixins";
+
+body {
+    header {
+        .center_height(@h_smartphone);
+        overflow: hidden;
+
+        @media @smartphone_nophoto {
+            .center_height(@h_smartphone_nophoto);
+        }
+
+        @media @smartphone_inline {
+            .center_height(@h_smartphone_inline);
+        }
+
+        h1 {
+            height: @h_title_6em * 2;
+            margin-bottom: 0px;
+
+            // Fix to put the title in two lines when screen is too large
+            @media @smartphone_fix {
+                padding: 0px 5% 0px 5%;
+            }
+        }
+
+        #photo {
+            @media @smartphone_nophoto {
+                display: none;
+            }
+        }
+
+        #about {
+            @media @smartphone_inline {
+                font-size: 0.8em;
+                height: 150px;
+                line-height: 180px;
+            }
+        }
+
+        #links {
+            width: (60px + 20px*2) * 2;
+            margin-top: 0px;
+            margin-right: ~"calc(50% - ((60px + 20px*2) * 2)/2)";
+
+            li {
+                margin: 10px 20px 20px 20px;
+
+                &.socialnetworks {
+                    display: block;
+                }
+            }
+        }
+
+        #socialnetworks {
+            float: none;
+            width: 100%;
+            display: block;
+            position: fixed;
+            left: 100%;
+            .center_height(@h_smartphone);
+            margin-top: 0px;
+            background: url('img/noise.png') @background;
+            transition: all 0.5s ease-in-out;
+            z-index: 100;
+
+            &:target {
+                left: 0%;
+            }
+
+            @media @smartphone_nophoto {
+                .center_height(@h_smartphone_nophoto);
+            }
+
+            @media @smartphone_inline {
+                .center_height(@h_smartphone_inline);
+            }
+
+            li {
+                margin: 0px;
+                width: 100%;
+                display: block;
+                float: none;
+                height: 20%;
+
+                a {
+                    background: none;
+                    color: white;
+                    font-size: 2.5em;
+                    line-height: normal;
+                    font-family: 'Ubuntu', 'Trebuchet MS', Helvetica, sans-serif;
+                    padding: 25px 25px 25px 25px;
+                    text-align: center;
+
+
+                    &:before {
+                        display: block;
+                        float: left;
+                        width: 60px;
+                        height: 60px;
+                        content: ' ';
+                        background: url('img/links.png') no-repeat;
+                        margin-top: -10px;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                &.github a:before { background-position: 0px 0px; }
+                &.linkedin a:before { background-position: -60px 0px; }
+                &.viadeo a:before { background-position: -120px 0px; }
+                &.dyb a:before { background-position: -180px 0px; }
+
+                &.back {
+                    display: block;
+                    font-size: 0px;
+
+                    a:before {
+                        background: none;
+                        content:"\00ab";
+                        font-size: 60px;
+                        margin-left: ~"calc(50% - 30px)";
+                        line-height: 45px;
+                        border: 2px white solid;
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

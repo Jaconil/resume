@@ -1,0 +1,21 @@
+<svg version="1.1" baseProfile="basic" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1 1.5" preserveAspectRatio="none"
+>
+    <g>
+        <path d="
+            M 0.5 0
+            C 0.5 0.05, 0.5 0.05, 0.3 0.05
+            C 0.15 0.05, 0.1 0.1, 0.1 0.2
+            C 0.1 0.3, 0.11 0.3, 0.11 0.4
+            C 0.11 0.5, 0.08 0.5, 0.08 0.6
+            C 0.08 0.75, 0.11 0.75, 0.11 0.9
+            C 0.11 1.05, 0.08 1.05, 0.08 1.2
+            C 0.08 1.35, 0.1 1.35, 0.1 1.5
+        "
+          stroke-width="5px"
+          stroke="#fff"
+          fill="transparent"
+          vector-effect="non-scaling-stroke"
+        />
+    </g>
+</svg>

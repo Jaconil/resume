@@ -1,0 +1,186 @@
+@import "variables";
+@import "mixins";
+
+body {
+    background: url('img/noise.png') @background;
+
+    header {
+        .center_height(@h_desktop);
+        width: 100%;
+
+        h1 {
+            color: white;
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 8em;
+            margin-top: 0px;
+            height: 120px;
+            margin-bottom: 30px;
+            text-align: center;
+
+            span {
+                color: @green;
+            }
+        }
+
+        #photo {
+            border-right: solid white 1px;
+            padding-right: 30px;
+
+            div {
+                text-align: right;
+                position: relative;
+
+                img {
+                    height: 200px;
+                    display: block;
+                    float: right !important;
+                    opacity: 0.8;
+
+                    &.transition {
+                        transition: all 1s ease-in-out;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                        box-shadow: 0 0 10px @green;
+                    }
+                }
+            }
+        }
+
+        #about {
+            height: 200px;
+            line-height: 200px;
+            padding-left: 30px;
+
+            div {
+                display: inline-block;
+                vertical-align: middle;
+                height: 143px;
+                color: white;
+                font-size: 1.7em;
+                line-height: 2em;
+                font-family: 'Ubuntu', 'Trebuchet MS', Helvetica, sans-serif;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        #links {
+//            background-color: red;
+            margin-top: 20px;
+            margin-right: ~"calc(50% - ((60px + 20px*2) * 5)/2)";
+            padding: 0;
+            height: 100px;
+            list-style-type: none;
+            width: (60px + 20px*2) * 1;
+            float: right;
+
+            li.socialnetworks {
+                display: none;
+            }
+        }
+
+        #socialnetworks {
+//            background-color: green;
+            margin: 20px 0px 0px 0px;
+            padding: 0;
+            height: 100px;
+            list-style-type: none;
+            width: (60px + 20px*2) * 4;
+            float: right;
+
+            li.back {
+                display: none;
+            }
+        }
+
+        li {
+//            background-color: darkgoldenrod;
+            height: 60px;
+            width: 60px;
+            margin: 20px;
+            display: inline-block;
+            float: left;
+
+            a {
+                line-height: 60px;
+                display: block;
+                color: white;
+                text-decoration: none;
+                opacity: 0.5;
+                height: 100%;
+                background: url('img/links.png') no-repeat;
+
+                &.transition {
+                    transition: all 0.4s ease-in-out;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            &.github a { background-position: 0px 0px; }
+            &.linkedin a { background-position: -60px 0px; }
+            &.viadeo a { background-position: -120px 0px; }
+            &.dyb a { background-position: -180px 0px; }
+            &.pdf a { background-position: -240px 0px; }
+            &.socialnetworks a { background-position: -300px 0px; }
+        }
+
+    }
+
+//    nav::before {
+//        background-color: red;
+//        display: block;
+//        width: 20px;
+//        height: 20px;
+//    }
+
+    nav a {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        display: block;
+        width: 100px;
+        text-align: center;
+        height: 50px;
+        font-size: 0px;
+        color: transparent;
+        border: solid white 2px;
+
+        &.next {
+            bottom: 0px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom: none;
+        }
+
+        &.back {
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top: none;
+        }
+
+        &#resume.fixed {
+            position: fixed;
+            top: 0px;
+        }
+    }
+
+    #timeline {
+        width: 100%;
+        height: ~"calc(100vh - 50px)";;
+        position: absolute;
+        top: ~"calc(100vh + 50px)";
+        z-index: -1;
+
+        &.fixed {
+            position: fixed;
+            top: 50px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+// Colors
+@background: rgb(43,43,43);
+@green: #8CC84B;
+
+// Media queries
+@desktop:               ~'only screen and (min-width: 768px)';
+@desktop_inline:        ~'(max-height: 500px)';
+
+@tablet:                ~'only screen and (max-width: 767px)';
+@tablet_nophoto:        ~'(max-height: 700px)';
+@tablet_inline:         ~'(min-width: 500px) and (max-height: 550px)';
+
+@smartphone:            ~'only screen and (max-width: 500px)';
+@smartphone_fix:        ~'(min-width: 400px)';
+@smartphone_nophoto:    ~'(max-height: 750px)';
+@smartphone_inline:     ~'(max-height: 580px)';
+
+@h_title: 120px;
+@h_title_6em: 100px;
+@h_title_margin: 30px;
+@h_about_inline: 50px;
+@h_about: 200px;
+@h_links_margin: 20px;
+@h_links: 100px;
+
+@h_desktop: @h_title + @h_title_margin + @h_about + @h_links_margin + @h_links;
+@h_desktop_inline: @h_desktop - @h_about + @h_about_inline;
+
+@h_tablet: @h_desktop + @h_about - @h_title + @h_title_6em;
+@h_tablet_nophoto: @h_tablet - @h_about;
+@h_tablet_inline: @h_tablet_nophoto - @h_about + @h_about_inline;
+
+@h_smartphone: @h_tablet + @h_title_6em - @h_title_margin - @h_links_margin;
+@h_smartphone_nophoto: @h_smartphone - @h_about;
+@h_smartphone_inline: @h_smartphone_nophoto - 50px;

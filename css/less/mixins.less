@@ -1,0 +1,10 @@
+.center_padding(@height) {
+    padding-top: ~"calc((100vh - @{height}) / 2)";
+    padding-bottom: ~"calc((100vh - @{height}) / 2)";
+}
+
+.center_height(@height) {
+    top: 0px;
+    height: 100vh;
+    .center_padding(@height);
+}
