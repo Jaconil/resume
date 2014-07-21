@@ -1,13 +1,15 @@
 $(document).ready(function() {
 
     function addTransition(element) {
-        $(element).addClass('transition');
+        $(this).addClass('transition');
     }
 
     // Fondus
-        $('header li a').hide();
+        $('header li a, nav a').hide();
         $('#photo img').hide().fadeIn(2000, function() {
             $(this).addClass('transition');
+
+            $('nav a').fadeIn(2800, addTransition);
 
             $('header li.github a').fadeIn(1200, addTransition);
             $('header li.linkedin a').fadeIn(1600, addTransition);
@@ -35,22 +37,31 @@ $(document).ready(function() {
         element.typewriter(data, 0, 0);
 
     // Timeline
-        var top = $('#timeline').offset().top; // FIXME: changer à chaque resize
+        var topResume = $('#timeline').offset().top; // FIXME: changer à chaque resize
 
         $(window).scroll(function() {
-            if ($(window).scrollTop() < top - 50) {
+            var currentScroll = $(window).scrollTop();
+            if (currentScroll < topResume - 50) {
                 $('#timeline, #resume').removeClass('fixed');
             } else {
                 $('#timeline, #resume').addClass('fixed');
             }
         });
 
-//        var top = $('header').height();
-//
-//        $(window).scroll(function() {
-//            var scroll = $(window).scrollTop();
-//            $('#timeline').css('opacity', scroll/top - 0.5);
-//            $('header').css('opacity', 1 - scroll/top*2);
-//        });
+    // Next
+        $('nav a.next').on('click', function() {
+            var topNext = $('a.back', $(this).parent()).offset().top;
+            $('html, body').animate({
+                scrollTop: topNext
+            }, 1000);
+            return false;
+        });
+
+        $('nav a.back').on('click', function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 1000);
+            return false;
+        });
 });
 

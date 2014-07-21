@@ -1,0 +1,16 @@
+<svg version="1.1" baseProfile="basic" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     height="50px" width="100px" viewBox="0 0 1 1" preserveAspectRatio="none"
+>
+    <g>
+        <path d="
+            M 0.25 0.65
+            L 0.5 0.2
+            L 0.75 0.65
+        "
+          stroke-width="2px"
+          stroke="#fff"
+          fill="transparent"
+          vector-effect="non-scaling-stroke"
+        />
+    </g>
+</svg>

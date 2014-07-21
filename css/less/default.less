@@ -133,13 +133,6 @@ body {
 
     }
 
-//    nav::before {
-//        background-color: red;
-//        display: block;
-//        width: 20px;
-//        height: 20px;
-//    }
-
     nav a {
         position: absolute;
         left: 50%;
@@ -150,19 +143,30 @@ body {
         height: 50px;
         font-size: 0px;
         color: transparent;
-        border: solid white 2px;
+        border: solid white 3px;
+        opacity: 0.5;
+
+        &.transition {
+            transition: all 0.4s ease-in-out;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
 
         &.next {
             bottom: 0px;
             border-top-left-radius: 50px;
             border-top-right-radius: 50px;
             border-bottom: none;
+            background-image: url('img/noise.png') url('img/next.svg');
         }
 
         &.back {
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
             border-top: none;
+            background-image: url('img/noise.png') url('img/back.svg');
         }
 
         &#resume.fixed {
