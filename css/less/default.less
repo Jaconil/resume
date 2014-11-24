@@ -133,40 +133,42 @@ body {
 
     }
 
-    nav a {
+    nav {
+        border: solid white 3px;
         position: absolute;
         left: 50%;
         margin-left: -50px;
         display: block;
         width: 100px;
-        text-align: center;
-        height: 50px;
-        font-size: 0px;
-        color: transparent;
-        border: solid white 3px;
-        opacity: 0.5;
+        height: 100px;
+        bottom: -50px;
+        border-radius: 50px;
+        background: url('img/noise.png') @background;
 
-        &.transition {
-            transition: all 0.4s ease-in-out;
-        }
+        a {
+            display: block;
+            width: 100px;
+            text-align: center;
+            height: 50px;
+            font-size: 0px;
+            color: transparent;
+            opacity: 0.5;
 
-        &:hover {
-            opacity: 1;
-        }
+            &.transition {
+                transition: all 0.4s ease-in-out;
+            }
 
-        &.next {
-            bottom: 0px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-            border-bottom: none;
-            background-image: url('img/noise.png') url('img/next.svg');
-        }
+            &:hover {
+                opacity: 1;
+            }
 
-        &.back {
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            border-top: none;
-            background-image: url('img/noise.png') url('img/back.svg');
+            &.next {
+                background-image: url('img/next.svg');
+            }
+
+            &.back {
+                background-image: url('img/back.svg');
+            }
         }
 
         &#resume.fixed {

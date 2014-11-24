@@ -35,33 +35,5 @@ $(document).ready(function() {
         });
 
         element.typewriter(data, 0, 0);
-
-    // Timeline
-        var topResume = $('#timeline').offset().top; // FIXME: changer à chaque resize
-
-        $(window).scroll(function() {
-            var currentScroll = $(window).scrollTop();
-            if (currentScroll < topResume - 50) {
-                $('#timeline, #resume').removeClass('fixed');
-            } else {
-                $('#timeline, #resume').addClass('fixed');
-            }
-        });
-
-    // Next
-        $('nav a.next').on('click', function() {
-            var topNext = $('a.back', $(this).parent()).offset().top;
-            $('html, body').animate({
-                scrollTop: topNext
-            }, 1000);
-            return false;
-        });
-
-        $('nav a.back').on('click', function() {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 1000);
-            return false;
-        });
 });
 

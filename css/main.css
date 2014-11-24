@@ -123,17 +123,25 @@ body header li.pdf a {
 body header li.socialnetworks a {
   background-position: -300px 0px;
 }
-body nav a {
+body nav {
+  border: solid white 3px;
   position: absolute;
   left: 50%;
   margin-left: -50px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  bottom: -50px;
+  border-radius: 50px;
+  background: url('img/noise.png') #2b2b2b;
+}
+body nav a {
   display: block;
   width: 100px;
   text-align: center;
   height: 50px;
   font-size: 0px;
   color: transparent;
-  border: solid white 3px;
   opacity: 0.5;
 }
 body nav a.transition {
@@ -143,19 +151,12 @@ body nav a:hover {
   opacity: 1;
 }
 body nav a.next {
-  bottom: 0px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom: none;
-  background-image: url('img/noise.png') url('img/next.svg');
+  background-image: url('img/next.svg');
 }
 body nav a.back {
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top: none;
-  background-image: url('img/noise.png') url('img/back.svg');
+  background-image: url('img/back.svg');
 }
-body nav a#resume.fixed {
+body nav#resume.fixed {
   position: fixed;
   top: 0px;
 }
