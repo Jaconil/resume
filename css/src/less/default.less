@@ -69,7 +69,6 @@ body {
         }
 
         #links {
-//            background-color: red;
             margin-top: 20px;
             margin-right: ~"calc(50% - ((60px + 20px*2) * 5)/2)";
             padding: 0;
@@ -84,7 +83,6 @@ body {
         }
 
         #socialnetworks {
-//            background-color: green;
             margin: 20px 0px 0px 0px;
             padding: 0;
             height: 100px;
@@ -98,7 +96,6 @@ body {
         }
 
         li {
-//            background-color: darkgoldenrod;
             height: 60px;
             width: 60px;
             margin: 20px;
@@ -131,62 +128,5 @@ body {
             &.socialnetworks a { background-position: -300px 0px; }
         }
 
-    }
-
-    nav {
-        border: solid white 3px;
-        position: absolute;
-        left: 50%;
-        margin-left: -50px;
-        display: block;
-        width: 100px;
-        height: 100px;
-        bottom: -50px;
-        border-radius: 50px;
-        background: url('img/noise.png') @background;
-
-        a {
-            display: block;
-            width: 100px;
-            text-align: center;
-            height: 50px;
-            font-size: 0px;
-            color: transparent;
-            opacity: 0.5;
-
-            &.transition {
-                transition: all 0.4s ease-in-out;
-            }
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &.next {
-                background-image: url('img/next.svg');
-            }
-
-            &.back {
-                background-image: url('img/back.svg');
-            }
-        }
-
-        &#resume.fixed {
-            position: fixed;
-            top: 0px;
-        }
-    }
-
-    #timeline {
-        width: 100%;
-        height: ~"calc(100vh - 50px)";;
-        position: absolute;
-        top: ~"calc(100vh + 50px)";
-        z-index: -1;
-
-        &.fixed {
-            position: fixed;
-            top: 50px;
-        }
     }
 }
