@@ -9,8 +9,6 @@ $(document).ready(function() {
     $('#photo img').hide().fadeIn(2000, function() {
         $(this).addClass('transition');
 
-        $('nav a').fadeIn(2800, addTransition);
-
         $('li.github a').fadeIn(1200, addTransition);
         $('li.linkedin a').fadeIn(1600, addTransition);
         $('li.viadeo a').fadeIn(2000, addTransition);

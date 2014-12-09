@@ -9,7 +9,8 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'js/dist/main.min.js': ['js/src/*.js']
+                    'js/dist/main.min.js': ['js/src/*.js'],
+                    'js/dist/bootstrap-tooltip.min.js': ['lib/bootstrap/js/tooltip.js']
                 }
             }
         },
