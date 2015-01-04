@@ -1,8 +1,9 @@
+var pkg = require('./package.json');
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-
+        // JS files configuration
         uglify: {
             options: {
                 banner: '/* <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -15,6 +16,7 @@ module.exports = function(grunt) {
             }
         },
 
+        // CSS files configuration
         less: {
             options: {
                 rootpath: '../'
@@ -35,12 +37,35 @@ module.exports = function(grunt) {
                     'css/dist/main.min.css': ['css/src/*.css']
                 }
             }
+        },
+
+        // Deployment configuration
+        shipit: {
+            options: {
+                workspace: '.tmp/' + pkg.name,
+                deployTo: pkg.name,
+                repositoryUrl: pkg.repository.url,
+                keepReleases: 3
+            },
+            prod: {
+                servers: 'maxime-guihal.com'
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-shipit');
 
     grunt.registerTask('default', ['uglify', 'less', 'cssmin']);
+
+    // Grunt-shipit configuration
+    grunt.registerTask('npm:install', 'Npm install', function () {
+        grunt.shipit.remote('cd ' + grunt.shipit.releasePath + ' && npm install', this.async());
+    });
+
+    grunt.shipit.on('updated', function () {
+        grunt.task.run(['npm:install']);
+    });
 };
