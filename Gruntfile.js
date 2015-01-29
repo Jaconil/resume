@@ -41,14 +41,17 @@ module.exports = function(grunt) {
 
         // Deployment configuration
         shipit: {
-            options: {
+            default: {
                 workspace: '.tmp/' + pkg.name,
-                deployTo: pkg.name,
                 repositoryUrl: pkg.repository.url,
-                keepReleases: 3
+                keepReleases: 3,
+                servers: 'maxime-guihal.com'
             },
             prod: {
-                servers: 'maxime-guihal.com'
+                deployTo: pkg.name
+            },
+            dev: {
+                deployTo: 'dev/' + pkg.name
             }
         }
     });
@@ -56,12 +59,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+
     grunt.loadNpmTasks('grunt-shipit');
+    grunt.loadNpmTasks('shipit-deploy');
 
     grunt.registerTask('default', ['uglify', 'less', 'cssmin']);
 
     // Grunt-shipit configuration
-    grunt.registerTask('npm:install', 'Npm install', function () {
+    grunt.registerTask('npm:install', 'npm install', function () {
         grunt.shipit.remote('cd ' + grunt.shipit.releasePath + ' && npm install', this.async());
     });
 
